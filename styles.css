@@ -1,0 +1,15 @@
+
+body {
+  padding: 20px;
+  background-image: url("./images/filmbg3.png");
+}
+
+@font-face {
+  font-family: title;
+  src: url("./fonts/Championship.ttf");
+}
+
+#title {
+  font-family: title;
+  text-align: center;
+}
