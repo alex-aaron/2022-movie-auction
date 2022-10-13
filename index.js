@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let budgetElement = document.getElementById(`budget-${finalName.value}`);
       changeBudget(budgetElement, finalBid.value);
       addMovieToParticipant(movie, finalName.value, finalBid.value);
+      finalName.value = "";
+      finalBid.value = "";
     });
 });
 
