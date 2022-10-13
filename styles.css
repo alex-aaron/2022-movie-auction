@@ -9,7 +9,21 @@ body {
   src: url("./fonts/Championship.ttf");
 }
 
+@font-face {
+  font-family: name;
+  src: url("./fonts/TravelingTypewriter.ttf");
+}
+
+
 #title {
   font-family: title;
   text-align: center;
+}
+
+#name-input-container {
+  margin: auto;
+}
+
+#names-container {
+  padding: 10px;
 }
