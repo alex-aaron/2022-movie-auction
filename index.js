@@ -3,14 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let nameForm = document.getElementById('name-input-form');
     let movieForm = document.getElementById('movie-input-form');
-    console.log(movieForm);
     let bidForm = document.getElementById('bid-input-form');
     let bid = document.getElementById('bid');
     let name = document.getElementById('participant');
     let movie = document.getElementById('movie');
     let newCost = document.getElementById('costInput');
     let finalSubmissionForm = document.getElementById('final-submission');
-    console.log(finalSubmissionForm);
     let finalName = document.getElementById('final-name-input');
     let finalBid = document.getElementById('final-bid-input');
 
@@ -36,9 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       let movieElement = document.getElementById('movie-text');
       let movie = movieElement.innerText.split(": ")[1];
+      let budgetElement = document.getElementById(`budget-${finalName.value}`);
+      changeBudget(budgetElement, finalBid.value);
       addMovieToParticipant(movie, finalName.value, finalBid.value);
     });
 });
+
+function changeBudget(budget, bid){
+  let budgetNum = parseFloat(budget.innerHTML.split(": ")[1]);
+  let bidNum = parseFloat(bid);
+  let remaining = budgetNum - bidNum;
+  budget.innerHTML = `Remaining Number: ${remaining}`;
+}
 
 
 function createNameCard(name){
@@ -55,9 +62,15 @@ function createNameCard(name){
   title.className = 'card-title';
   title.innerHTML = name;
 
+  let budget = document.createElement('p');
+  budget.style = 'font-family: name; text-align: center';
+  budget.setAttribute('id', `budget-${name}`);
+  budget.innerHTML = `Remaining Budget: 1000`;
+
   let space = document.createElement('br');
 
   innerDiv.append(title);
+  innerDiv.append(budget);
   nameCard.append(innerDiv);
 
   let nameTable = addTableToCard(name);
@@ -103,7 +116,6 @@ function addTableToCard(name){
 }
 
 function addMovieToParticipant(movie, name, bid){
-  console.log(bid);
   let tbody = document.getElementById(`body-${name}`);
   let row = document.createElement('tr');
   let num;
@@ -126,6 +138,4 @@ function addMovieToParticipant(movie, name, bid){
   }
 
   tbody.append(row);
-
-  // x.firstChild.getElementsByClassName('movie-num')[0].textContent
 }
