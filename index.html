@@ -11,16 +11,64 @@
   <body>
     <h1 id='title'>2022 MOVIE AUCTION</h1>
 
-    <div id='name-input-container'>
-      <form class='form-inline' id='name-input-form'>
-        <div class="form-group mx-sm-3 mb-2">
-         <label for="inputPassword2" class="sr-only">Password</label>
-         <input type="text" class="form-control" id="participant" placeholder="Enter Name">
-       </div>
-         <button type="submit" class="btn btn-dark mb-2">Submit</button>
-      </form>
+    <div id='name-input-container' class='container'>
+      <div class='row'>
+        <div class='col-sm'>
+          <form class='form-inline' id='name-input-form'>
+            <div class="form-group mx-sm-3 mb-2">
+             <label for="name" class="sr-only">Name</label>
+             <input type="text" class="form-control" id="participant" placeholder="Enter Name">
+           </div>
+             <button type="submit" class="btn btn-dark mb-2">Submit</button>
+          </form>
+        </div>
+        <div class='col-sm'>
+          <form class='form-inline' id='movie-input-form'>
+            <div class="form-group mx-sm-3 mb-2">
+             <label for="name" class="sr-only">Movie</label>
+             <input type="text" class="form-control" id="movie" placeholder="Enter Movie">
+           </div>
+             <button type="submit" class="btn btn-dark mb-2">Submit</button>
+          </form>
+        </div>
+        <div class='col-sm'>
+          <form class='form-inline' id='bid-input-form'>
+            <div class="form-group mx-sm-3 mb-2">
+             <label for="name" class="sr-only">Name</label>
+             <input type="text" class="form-control" id="bid" placeholder="Enter Current Bid">
+           </div>
+             <button type="submit" class="btn btn-dark mb-2">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
     <hr>
+
+    <div id="bid-container">
+      <div class="card border-dark mb-3 mx-auto" id='bid-card' style="max-width: 30rem;">
+        <div class="card-header"><h4 id='movie-text'>Current Movie:</h4></div>
+        <div class="card-body text-dark">
+        <h5 class="card-title">Current Bid:</h5>
+        <p class="card-text" id='bid-text'>0</p>
+      </div>
+    </div>
+
+    <div class="card text-white bg-dark mb-3 mx-auto" style="max-width: 30rem;">
+      <div id='final-submission-container'>
+        <form id='final-submission'>
+          <div class="form-group">
+            <label for="final-bid">Enter Final Bid:</label>
+            <input type="text" class="form-control form-control-sm" id="final-bid-input" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="final-name">Ener Name:</label>
+            <input type="text" class="form-control form-control-sm" id="final-name-input" placeholder="Name">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
     <div id='names-container'>
 
     </div>
